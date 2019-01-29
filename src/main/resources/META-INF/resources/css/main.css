@@ -48,6 +48,10 @@ ul.label {
     text-align: left;
 }
 
+.field1 {
+    text-align: left;
+}
+
 .number {
     text-align: right;
     vertical-align: middle !important;
