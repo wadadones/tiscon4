@@ -102,14 +102,21 @@
                                     <label>業種</label>
                                 </td>
                                 <td>
-                                    <div th:each="item : ${industryTypes}" class="field"
-                                         th:classappend="${errors.hasError('industryType')} ? 'error'">
-                                        <input type="radio" name="industryType" th:value="${item.code}"
-                                               th:text="${item.label}" th:field="*{industryType}"
-                                               th:checked="${form.industryType}==${item.code}"/>
-                                    </div>
-                                    <p th:if="${errors.hasError('industryType')}"
-                                       th:text="${errors.getMessage('industryType')}" class="error-message">
+                                    <select name="industryType">
+                                        <option value="" selected>選択してください</option>
+                                        <option value="農林水鉱">農業・林業・水産業・鉱業</option>
+                                        <option value="建築不動産">建設・不動産業</option>
+                                        <option value="製造">製造業</option>
+                                        <option value="卸小売流通">卸売業・小売・その他流通業</option>
+                                        <option value="金融保険">金融・保険業</option>
+                                        <option value="運輸通信">運輸・通信業</option>
+                                        <option value="電気ガス">電気・ガス業</option>
+                                        <option value="官公庁">官公庁</option>
+                                        <option value="サービス">その他サービス業</option>
+                                        <option value="その他">その他・不明</option>
+                                    </select>
+                                    <p th:if="${errors.hasError('industry')}" th:text="${errors.getMessage('industry')}"
+                                       class="error-message">
                                     </p>
                                 </td>
                             </tr>
