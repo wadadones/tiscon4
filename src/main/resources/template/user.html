@@ -240,19 +240,23 @@
                                     <label>ご職業</label>
                                     <p style="color:red;">＊</p></td>
                                 <td>
-                                    <select name="職業">
-                                        <option value="keiei/jieigyo">経営・自営業</option>
-                                        <option value="kaisyain" selected="">会社員</option>
-                                        <option value="keiyaku/hakensyain">契約・派遣社員</option>
-                                        <option value="komuin">公務員</option>
-                                        <option value="minkandantai" selected="">民間団体</option>
-                                        <option value="syufu">主婦</option>
-                                        <option value="gakusei">学生</option>
-                                        <option value="nenkinzyukyusya" selected="">年金受給者の方</option>
-                                        <option value="pato/arubaito">パート・アルバイト</option>
-                                        <option value="sonota(yusyoku)">その他(有職)</option>
-                                        <option value="sonota(musyoku)" selected="">その他(無職)</option>
-                                    </select>
+                                         <select name="job">
+                                              <option value="" selected>選択してください</option>
+                                              <option value="経営自営">経営・自営業</option>
+                                              <option value="会社員">会社員</option>
+                                              <option value="契約派遣">契約・派遣社員</option>
+                                              <option value="公務員">公務員</option>
+                                              <option value="民間団体">民間団体</option>
+                                              <option value="主婦">主婦</option>
+                                              <option value="学生">学生</option>
+                                              <option value="年金受給">年金受給者の方</option>
+                                              <option value="パートアルバイト">パート・アルバイト</option>
+                                              <option value="他有職">その他(有職)</option>
+                                              <option value="他無職">その他(無職)</option>
+                                          </select>
+                                    <p th:if="${errors.hasError('job')}" th:text="${errors.getMessage('job')}"
+                                       class="error-message">
+                                    </p>
                                 </td>
                             </tr>
                             <tr>
