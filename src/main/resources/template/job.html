@@ -44,9 +44,8 @@
                                     <label>お勤め先名（全角）</label>
                                 </td>
                                 <td>
-                                    <p>例：ＴＩＳＣＯＮ株式会社</p>
                                     <div class="field " th:classappend="${errors.hasError('employerName')} ? 'error'">
-                                        <input type="text" name="employerName" th:value="${form.employerName}"/>
+                                        <input type="text" name="employerName" placeholder="例：ＴＩＳＣＯＮ株式会社" th:value="${form.employerName}"/>
                                         <p th:if="${errors.hasError('employerName')}"
                                            th:text="${errors.getMessage('employerName')}" class="error-message">
                                         </p>
@@ -58,9 +57,8 @@
                                     <label>お勤め先郵便番号（半角）</label>
                                 </td>
                                 <td>
-                                    <p>例：123-4567</p>
                                     <div class="field" th:classappend="${errors.hasError('employerZipCode')} ? 'error'">
-                                        <input type="text" name="employerZipCode" th:value="${form.employerZipCode}"/>
+                                        <input type="text" name="employerZipCode" placeholder="例:123-4567" th:value="${form.employerZipCode}"/>
                                         <p th:if="${errors.hasError('employerZipCode')}"
                                            th:text="${errors.getMessage('employerZipCode')}" class="error-message">
                                         </p>
@@ -72,9 +70,8 @@
                                     <label>お勤め先住所（全角）</label>
                                 </td>
                                 <td>
-                                    <p>例：東京都新宿区西新宿８－１７－１</p>
                                     <div class="field" th:classappend="${errors.hasError('employerAddress')} ? 'error'">
-                                        <input type="text" name="employerAddress" th:value="${form.employerAddress}"/>
+                                        <input type="text" name="employerAddress" placeholder="例：東京都新宿区西新宿１－１－１０１" th:value="${form.employerAddress}"/>
                                         <p th:if="${errors.hasError('employerAddress')}"
                                            th:text="${errors.getMessage('employerAddress')}" class="error-message">
                                         </p>
@@ -86,10 +83,9 @@
                                     <label>お勤め先電話番号（半角）</label>
                                 </td>
                                 <td>
-                                    <p>例：00-1111-2222</p>
                                     <div class="field"
                                          th:classappend="${errors.hasError('employerPhoneNumber')} ? 'error'">
-                                        <input type="text" name="employerPhoneNumber"
+                                        <input type="text" name="employerPhoneNumber" placeholder="例：0011112222"
                                                th:value="${form.employerPhoneNumber}"/>
                                         <p th:if="${errors.hasError('employerPhoneNumber')}"
                                            th:text="${errors.getMessage('employerPhoneNumber')}" class="error-message">
