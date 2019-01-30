@@ -142,6 +142,10 @@ ul.label {
     height: 300px;
 }
 
+.index-button:hover {
+    color:#FFFF00;
+}
+
 .index-text{
     position:relative;
     text-align:left;
