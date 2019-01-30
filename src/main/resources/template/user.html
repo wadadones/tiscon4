@@ -132,9 +132,8 @@
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：123-4567</p>
                                     <div class="field" th:classappend="${errors.hasError('zipCode')} ? 'error'">
-                                        <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
+                                        <input type="text" class="zipcode" name="zipCode" placeholder="例：1234567" th:value="${form.zipCode}"/>
                                         <p th:if="${errors.hasError('zipCode')}"
                                            th:text="${errors.getMessage('zipCode')}" class="error-message">
                                         </p>
@@ -161,13 +160,12 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label>自宅電話番号（半角）</label>
+                                    <label>携帯電話番号（半角）</label>
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：00-1111-2222</p>
                                     <div class="field" th:classappend="${errors.hasError('homePhoneNumber')} ? 'error'">
-                                        <input type="text" name="homePhoneNumber" th:value="${form.homePhoneNumber}"/>
+                                        <input type="text" name="homePhoneNumber" placeholder="例：08011112222" th:value="${form.homePhoneNumber}"/>
                                         <p th:if="${errors.hasError('homePhoneNumber')}"
                                            th:text="${errors.getMessage('homePhoneNumber')}" class="error-message">
                                         </p>
@@ -176,14 +174,13 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label>携帯電話番号（半角）</label>
+                                    <label>緊急連絡先電話番号（半角）</label>
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：080-0000-0000</p>
                                     <div class="field"
                                          th:classappend="${errors.hasError('mobilePhoneNumber')} ? 'error'">
-                                        <input type="text" name="mobilePhoneNumber"
+                                        <input type="text" name="mobilePhoneNumber" placeholder="例：0011112222"
                                                th:value="${form.mobilePhoneNumber}"/>
                                         <p th:if="${errors.hasError('mobilePhoneNumber')}"
                                            th:text="${errors.getMessage('mobilePhoneNumber')}" class="error-message">
@@ -197,9 +194,9 @@
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：sample@docomo.ne.jp</p>
+                                    <p></p>
                                     <div class="field" th:classappend="${errors.hasError('emailAddress')} ? 'error'">
-                                        <input type="text" name="emailAddress" th:value="${form.emailAddress}"/>
+                                        <input type="text" name="emailAddress" placeholder="例：sample@docomo.ne.jp" th:value="${form.emailAddress}"/>
                                         <p th:if="${errors.hasError('emailAddress')}"
                                            th:text="${errors.getMessage('emailAddress')}" class="error-message">
                                         </p>
@@ -243,14 +240,19 @@
                                     <label>ご職業</label>
                                     <p style="color:red;">＊</p></td>
                                 <td>
-                                    <div th:each="item : ${jobTypes}" class="field"
-                                         th:classappend="${errors.hasError('job')} ? 'error'">
-                                        <input type="radio" name="job" th:value="${item.code}" th:text="${item.label}"
-                                               th:field="*{job}" th:checked="${form.job}==${item.code}"/>
-                                    </div>
-                                    <p th:if="${errors.hasError('job')}" th:text="${errors.getMessage('job')}"
-                                       class="error-message">
-                                    </p>
+                                    <select name="職業">
+                                        <option value="keiei/jieigyo">経営・自営業</option>
+                                        <option value="kaisyain" selected="">会社員</option>
+                                        <option value="keiyaku/hakensyain">契約・派遣社員</option>
+                                        <option value="komuin">公務員</option>
+                                        <option value="minkandantai" selected="">民間団体</option>
+                                        <option value="syufu">主婦</option>
+                                        <option value="gakusei">学生</option>
+                                        <option value="nenkinzyukyusya" selected="">年金受給者の方</option>
+                                        <option value="pato/arubaito">パート・アルバイト</option>
+                                        <option value="sonota(yusyoku)">その他(有職)</option>
+                                        <option value="sonota(musyoku)" selected="">その他(無職)</option>
+                                    </select>
                                 </td>
                             </tr>
                             <tr>
@@ -292,9 +294,9 @@
                                     <label>「はい」 を選んだ方は内容をご記入下さい（全角）</label>
                                 </td>
                                 <td>
-                                    <div class="field"
+                                    <div class="field1"
                                          th:classappend="|${errors.hasError('medicalHistory')?'error': ''} ${errors.hasError('valueMedicalHistory')?'error': ''}|">
-                                        <input type="text" name="medicalHistory" th:value="${form.medicalHistory}"/>
+                                        <input type="text" name="medicalHistory" placeholder="例：交通事故で1か月入院した　など" th:value="${form.medicalHistory}"/>
                                         <p th:if="${errors.hasError('medicalHistory')}"
                                            th:text="${errors.getMessage('medicalHistory')}" class="error-message">
                                         </p>
