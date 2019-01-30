@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ご本人情報の入力</title>
+
+    <link rel="stylesheet" th:href="@{http://fonts.googleapis.com/css?family=Exo:900}"/>
+    <link rel="stylesheet"
+          th:href="@{https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+<body>
+
+<nav th:insert="header.html :: header"></nav>
+
+<div class="full height image">
+    <div class="ui main container">
+        <div class="ui information container">
+            <!--
+            <div class="acceptance-icon" style="border:solid 3px #4B610B;" th:if="${insOrder.insuranceType.equals('treat')}">
+                <img src="/img/icon_treat.png">
+            </div>
+            <div class="acceptance-icon" style="border:solid 3px #B40404;"
+                 th:if="${insOrder.insuranceType.equals('treatLady')}">
+                <img src="/img/icon_treatLady.png">
+            </div>
+            <div class="acceptance-icon" style="border:solid 3px #0174DF;" th:if="${insOrder.insuranceType.equals('future')}">
+                <img src="/img/icon_future.png">
+            </div>
+            -->
+            <div class="ui middle center aligned grid ">
+                <div class="user-block">
+                    <h1 class="ui aligned header teal">申し込み内容確認</h1>
+                    <form action="action/order/create" method="post"/>
+                        <div class="ui statement">
+                            以下の内容で申し込みを行います。確認後、申し込むボタンを押してください
+                        </div>
+
+                        <div class="ui info message">
+
+                            <div class="header">ご入力内容</div>
+                            <table class="confirm">
+                                <tr>
+                                    <th><label>お名前（漢字）</label></th>
+                                    <th><p th:text="${insOrder.kanjiName}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>お名前（カタカナ）</label></th>
+                                    <th><p th:text="${insOrder.kanaName}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>お名前（ローマ字）</label></th>
+                                    <th><p th:text="${insOrder.alphabetName}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>性別</label></th>
+                                    <th><p th:text="${insOrder.gender}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>生年月日</label></th>
+                                    <th><p th:text="${insOrder.dateOfBirth}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>郵便番号</label></th>
+                                    <th><p th:text="${insOrder.zipCode}"></p></th>
+                                </tr>
+
+                                <tr>
+                                    <th><label>ご住所</label></th>
+                                    <th><p th:text="${insOrder.address}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>郵便番号</label></th>
+                                    <th><p th:text="${insOrder.zipCode}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>自宅電話番号</label></th>
+                                    <th><p th:text="${insOrder.homePhoneNumber}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>携帯電話番号</label></th>
+                                    <th><p th:text="${insOrder.mobilePhoneNumber}"></p></th>
+                                </tr>
+
+                                <tr>
+                                    <th><label>メールアドレス</label></th>
+                                    <th><p th:text="${insOrder.emailAddress}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>携帯電話番号</label></th>
+                                    <th><p th:text="${insOrder.mobilePhoneNumber}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>配偶者有無</label></th>
+                                    <th><p th:text="${insOrder.married}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>昨年の所得</label></th>
+                                    <th><p th:text="${insOrder.income}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>ご職業</label></th>
+                                    <th><p th:text="${insOrder.job}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>ご職業</label></th>
+                                    <th><p th:text="${insOrder.job}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>その他 (有職）</label></th>
+                                    <th><p th:text="${insOrder.otherJob}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>診察過去</label></th>
+                                    <th><p th:text="${insOrder.medicalHistory}"></p></th>
+                                </tr>
+
+                                <tr>
+                                    <th><label>お勤め先名</label></th>
+                                    <th><p th:text="${form.employerName}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>お勤め先郵便番号</label></th>
+                                    <th><p th:text="${form.employerZipCode}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>お勤め先住所</label></th>
+                                    <th><p th:text="${form.employerAddress}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>お勤め先電話番号</label></th>
+                                    <th><p th:text="${form.employerPhoneNumber}"></p></th>
+                                </tr>
+                                <tr>
+                                    <th><label>業種</label></th>
+                                    <th><p th:text="${form.industryType}"></p></th>
+                                </tr>
+
+                            </table>
+
+                        </div>
+
+                        <div class="eight wide column right aligned">
+                            <button class="ui teal button angle right icon">申し込む</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

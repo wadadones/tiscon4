@@ -29,7 +29,7 @@
                 <div class="user-block">
                     <h1 class="ui aligned header teal">お申込み情報</h1>
 
-                    <form class="ui form" method="post" action="/action/order/create">
+                    <form class="ui form" method="post" action="/action/order/confirm">
 
                         <div class="ui horizontal divider">お勤め先について</div>
 
@@ -124,10 +124,27 @@
                                 </button>
                             </div>
                             <div class="eight wide column right aligned">
-                                <button class="ui teal button angle right icon">申し込む</button>
+                                <button class="ui teal button angle right icon">申込内容確認</button>
                             </div>
                         </div>
                         <input type="hidden" name="nablarch_token" th:value="${nablarch_request_token}"/>
+                        <input type="hidden" name="kanaName" th:value="${insOrder.kanaName}"/>
+                        <input type="hidden" name="medicalHistory" th:value="${insOrder.medicalHistory}"/>
+                        <input type="hidden" name="married" th:value="${insOrder.married}"/>
+                        <input type="hidden" name="otherJob" th:value="${insOrder.otherJob}"/>
+                        <input type="hidden" name="job" th:value="${insOrder.job}"/>
+                        <input type="hidden" name="emailAddress" th:value="${insOrder.emailAddress}"/>
+                        <input type="hidden" name="alphabetName" th:value="${insOrder.alphabetName}"/>
+                        <input type="hidden" name="dateOfBirth" th:value="${insOrder.dateOfBirth}"/>
+                        <input type="hidden" name="kanjiName" th:value="${insOrder.kanjiName}"/>
+                        <input type="hidden" name="gender" th:value="${insOrder.gender}"/>
+                        <input type="hidden" name="homePhoneNumber" th:value="${insOrder.emailAddress}"/>
+                        <input type="hidden" name="address" th:value="${insOrder.address}"/>
+                        <input type="hidden" name="treated" th:value="${insOrder.treated}"/>
+                        <input type="hidden" name="mobilePhoneNumber" th:value="${insOrder.mobilePhoneNumber}"/>
+                        <input type="hidden" name="zipCode" th:value="${insOrder.zipCode}"/>
+                        <input type="hidden" name="income" th:value="${insOrder.income}"/>
+
                     </form>
                 </div>
             </div>
