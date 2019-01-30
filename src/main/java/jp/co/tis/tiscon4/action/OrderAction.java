@@ -125,7 +125,7 @@ public class OrderAction {
      * @param ctx HTTPリクエストの処理に関連するサーバ側の情報
      * @return HTTPレスポンス
      */
-    @InjectForm(form = JobForm.class)
+    @InjectForm(form = JobForm.class)//アノテーション
     @OnError(type = ApplicationException.class, path = "forward://inputJobForError")
     @OnDoubleSubmission(path = "doubleSubmissionError.html")
     public HttpResponse create(HttpRequest req, ExecutionContext ctx) {
@@ -137,6 +137,31 @@ public class OrderAction {
         UniversalDao.insert(insOrder);
 
         return new HttpResponse("redirect://completed");
+    }
+
+    @InjectForm(form = JobForm.class)
+    public HttpResponse confirm(HttpRequest req, ExecutionContext ctx) {
+
+        JobForm form = ctx.getRequestScopedVar("form");
+        InsuranceOrder insOrder = SessionUtil.get(ctx, "insOrder");
+
+        BeanUtil.copy(form, insOrder);//insert前の処理 form→insOrder
+
+        //UniversalDao.insert(insOrder);//DBへの登録処理
+        return new HttpResponse("confirm.html");
+
+    }
+
+    public HttpResponse confirm_sample(HttpRequest req, ExecutionContext ctx) {
+
+
+        //InsuranceOrder insOrder = SessionUtil.get(ctx, "insOrder");
+
+        //BeanUtil.copy(form, insOrder);//insert前の処理 form→insOrder
+
+        //UniversalDao.insert(insOrder);//DBへの登録処理
+        return new HttpResponse("confirm.html");
+
     }
 
     /**
