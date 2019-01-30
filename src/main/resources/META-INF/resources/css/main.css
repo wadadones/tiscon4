@@ -189,3 +189,7 @@ td {
 .center {
     text-align: center;
 }
+
+.confirm {
+    margin: auto;
+}
