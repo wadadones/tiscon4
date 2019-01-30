@@ -51,6 +51,9 @@
                                         <p th:if="${errors.hasError('kanjiFirstName')}"
                                            th:text="${errors.getMessage('kanjiFirstName')}" class="error-message">
                                         </p>
+                                        <p th:if="${errors.hasError('kanjiFamilyName')}"
+                                           th:text="${errors.getMessage('kanjiFamilyName')}" class="error-message">
+                                        </p>
                                     </div>
                                 </td>
                             </tr>
