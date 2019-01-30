@@ -24,20 +24,50 @@ public class Tiscon4DomainBean {
     @CodeValue(enumClass = InsuranceType.class)
     private String insuranceType;
 
-    /** 漢字氏名 */
+
+
+
+
+    /** 漢字性 */
     @SystemChar(charsetDef = "全角文字", message = "{domain.illegalCharacter}")
     @Length(max = 60)
-    private String kanjiName;
+    private String kanjiFamilyName;
 
-    /** カナ氏名 */
+
+
+    /** 漢字名 */
+    @SystemChar(charsetDef = "全角文字", message = "{domain.illegalCharacter}")
+    @Length(max = 60)
+    private String kanjiFirstName;
+
+
+
+
+
+    /** カナ性 */
     @SystemChar(charsetDef = "全角カタカナスペース", message = "{domain.illegalCharacter}")
     @Length(max = 90)
-    private String kanaName;
+    private String kanaFamilyName;
 
-    /** 英字氏名 */
+    /** カナ名 */
+    @SystemChar(charsetDef = "全角カタカナスペース", message = "{domain.illegalCharacter}")
+    @Length(max = 90)
+    private String kanaFirstName;
+
+
+
+
+    /** 英字性 */
     @SystemChar(charsetDef = "半角英字スペース", message = "{domain.illegalCharacter}")
     @Length(max = 120)
-    private String alphabetName;
+    private String alphabetFamilyName;
+
+    /** 英字名 */
+    @SystemChar(charsetDef = "半角英字スペース", message = "{domain.illegalCharacter}")
+    @Length(max = 120)
+    private String alphabetFirstName;
+
+
 
     /** 性別 */
     @CodeValue(enumClass = GenderType.class)
@@ -51,10 +81,18 @@ public class Tiscon4DomainBean {
     @ZipNumber
     private String zipCode;
 
-    /** 住所 */
+
+    /** 住所1 */
     @SystemChar(charsetDef = "全角文字", message = "{domain.illegalCharacter}")
     @Length(max = 255)
-    private String address;
+    private String address1;
+
+    /** 住所2 */
+    @SystemChar(charsetDef = "全角文字", message = "{domain.illegalCharacter}")
+    @Length(max = 255)
+    private String address2;
+
+
 
     /** 自宅電話番号 */
     @JapaneseTelNumber()
