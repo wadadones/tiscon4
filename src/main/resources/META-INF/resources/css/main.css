@@ -48,6 +48,10 @@ ul.label {
     text-align: left;
 }
 
+.field1 {
+    text-align: left;
+}
+
 .number {
     text-align: right;
     vertical-align: middle !important;
@@ -136,6 +140,10 @@ ul.label {
     border-radius:10px;
     width: 250px;
     height: 300px;
+}
+
+.index-button:hover {
+    color:#FFFF00;
 }
 
 .index-text{

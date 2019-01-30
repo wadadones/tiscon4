@@ -13,20 +13,42 @@ public class UserForm implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /** 漢字氏名 */
-    @Required
-    @Domain("kanjiName")
-    private String kanjiName;
 
-    /** カナ氏名 */
-    @Required
-    @Domain("kanaName")
-    private String kanaName;
 
-    /** 英字氏名 */
+    /** 漢字性 */
     @Required
-    @Domain("alphabetName")
-    private String alphabetName;
+    @Domain("kanjiFamilyName")
+    private String kanjiFamilyName;
+
+    /** 漢字名 */
+    @Required
+    @Domain("kanjiFirstName")
+    private String kanjiFirstName;
+
+
+
+    /** カナ性 */
+    @Required
+    @Domain("kanaFamilyName")
+    private String kanaFamilyName;
+
+    /** カナ名 */
+    @Required
+    @Domain("kanaFirstName")
+    private String kanaFirstName;
+
+
+    /** 英字性 */
+    @Required
+    @Domain("alphabetFamilyName")
+    private String alphabetFamilyName;
+
+    /** 英字名 */
+    @Required
+    @Domain("alphabetFamilyName")
+    private String alphabetFirstName;
+
+
 
     /** 性別 */
     @Required
@@ -43,10 +65,18 @@ public class UserForm implements Serializable {
     @Domain("zipCode")
     private String zipCode;
 
-    /** 住所 */
+
+    /** 住所1 */
     @Required
-    @Domain("address")
-    private String address;
+    @Domain("address1")
+    private String address1;
+
+    /** 住所2 */
+    @Required
+    @Domain("address2")
+    private String address2;
+
+
 
     /** 自宅電話番号 */
     @Required
@@ -91,29 +121,52 @@ public class UserForm implements Serializable {
     @Domain("medicalHistory")
     private String medicalHistory;
 
-    public String getKanjiName() {
-        return kanjiName;
+
+    public String getKanjiFamilyName() { return kanjiFamilyName; }
+
+    public void setKanjiFamilyName(String kanjiFamilyName) { this.kanjiFamilyName = kanjiFamilyName; }
+
+
+    public String getKanjiFirstName() { return kanjiFirstName; }
+
+    public void setKanjiFirstName(String kanjiFirstName) { this.kanjiFirstName = kanjiFirstName; }
+
+
+
+
+    public String getKanaFamilyName() { return kanaFamilyName; }
+
+    public void setKanaFamilyName(String kanaFamilyName) { this.kanaFamilyName = kanaFamilyName; }
+
+
+    public String getKanaFirstName() { return kanaFirstName; }
+
+    public void setKanaFirstName(String kanaFirstName) { this.kanaFirstName = kanaFirstName; }
+
+
+
+
+
+    public String getAlphabetFamilyName() {
+        return alphabetFamilyName;
     }
 
-    public void setKanjiName(String kanjiName) {
-        this.kanjiName = kanjiName;
+    public void setAlphabetFamilyName(String alphabetFamilyName) {
+        this.alphabetFamilyName = alphabetFamilyName;
     }
 
-    public String getKanaName() {
-        return kanaName;
+
+    public String getAlphabetFirstName() {
+        return alphabetFirstName;
     }
 
-    public void setKanaName(String kanaName) {
-        this.kanaName = kanaName;
+    public void setAlphabetFirstName(String alphabetFirstName) {
+        this.alphabetFirstName = alphabetFirstName;
     }
 
-    public String getAlphabetName() {
-        return alphabetName;
-    }
 
-    public void setAlphabetName(String alphabetName) {
-        this.alphabetName = alphabetName;
-    }
+
+
 
     public String getDateOfBirth() {
         return dateOfBirth;
@@ -139,13 +192,27 @@ public class UserForm implements Serializable {
         this.zipCode = zipCode;
     }
 
-    public String getAddress() {
-        return address;
+
+
+
+    public String getAddress1() {
+        return address1;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddress1(String address1) {
+        this.address1 = address1;
     }
+
+    public String getAddress2() {
+        return address2;
+    }
+
+    public void setAddress2(String address2) {
+        this.address2 = address2;
+    }
+
+
+
 
     public String getHomePhoneNumber() {
         return homePhoneNumber;

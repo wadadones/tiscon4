@@ -44,9 +44,8 @@
                                     <label>お勤め先名（全角）</label>
                                 </td>
                                 <td>
-                                    <p>例：ＴＩＳＣＯＮ株式会社</p>
                                     <div class="field " th:classappend="${errors.hasError('employerName')} ? 'error'">
-                                        <input type="text" name="employerName" th:value="${form.employerName}"/>
+                                        <input type="text" name="employerName" placeholder="例：ＴＩＳＣＯＮ株式会社" th:value="${form.employerName}"/>
                                         <p th:if="${errors.hasError('employerName')}"
                                            th:text="${errors.getMessage('employerName')}" class="error-message">
                                         </p>
@@ -58,9 +57,8 @@
                                     <label>お勤め先郵便番号（半角）</label>
                                 </td>
                                 <td>
-                                    <p>例：123-4567</p>
                                     <div class="field" th:classappend="${errors.hasError('employerZipCode')} ? 'error'">
-                                        <input type="text" name="employerZipCode" th:value="${form.employerZipCode}"/>
+                                        <input type="text" name="employerZipCode" placeholder="例:123-4567" th:value="${form.employerZipCode}"/>
                                         <p th:if="${errors.hasError('employerZipCode')}"
                                            th:text="${errors.getMessage('employerZipCode')}" class="error-message">
                                         </p>
@@ -72,9 +70,8 @@
                                     <label>お勤め先住所（全角）</label>
                                 </td>
                                 <td>
-                                    <p>例：東京都新宿区西新宿８－１７－１</p>
                                     <div class="field" th:classappend="${errors.hasError('employerAddress')} ? 'error'">
-                                        <input type="text" name="employerAddress" th:value="${form.employerAddress}"/>
+                                        <input type="text" name="employerAddress" placeholder="例：東京都新宿区西新宿１－１－１０１" th:value="${form.employerAddress}"/>
                                         <p th:if="${errors.hasError('employerAddress')}"
                                            th:text="${errors.getMessage('employerAddress')}" class="error-message">
                                         </p>
@@ -86,10 +83,9 @@
                                     <label>お勤め先電話番号（半角）</label>
                                 </td>
                                 <td>
-                                    <p>例：00-1111-2222</p>
                                     <div class="field"
                                          th:classappend="${errors.hasError('employerPhoneNumber')} ? 'error'">
-                                        <input type="text" name="employerPhoneNumber"
+                                        <input type="text" name="employerPhoneNumber" placeholder="例：0011112222"
                                                th:value="${form.employerPhoneNumber}"/>
                                         <p th:if="${errors.hasError('employerPhoneNumber')}"
                                            th:text="${errors.getMessage('employerPhoneNumber')}" class="error-message">
@@ -102,14 +98,21 @@
                                     <label>業種</label>
                                 </td>
                                 <td>
-                                    <div th:each="item : ${industryTypes}" class="field"
-                                         th:classappend="${errors.hasError('industryType')} ? 'error'">
-                                        <input type="radio" name="industryType" th:value="${item.code}"
-                                               th:text="${item.label}" th:field="*{industryType}"
-                                               th:checked="${form.industryType}==${item.code}"/>
-                                    </div>
-                                    <p th:if="${errors.hasError('industryType')}"
-                                       th:text="${errors.getMessage('industryType')}" class="error-message">
+                                    <select name="industryType">
+                                        <option value="" selected>選択してください</option>
+                                        <option value="農林水鉱">農業・林業・水産業・鉱業</option>
+                                        <option value="建築不動産">建設・不動産業</option>
+                                        <option value="製造">製造業</option>
+                                        <option value="卸小売流通">卸売業・小売・その他流通業</option>
+                                        <option value="金融保険">金融・保険業</option>
+                                        <option value="運輸通信">運輸・通信業</option>
+                                        <option value="電気ガス">電気・ガス業</option>
+                                        <option value="官公庁">官公庁</option>
+                                        <option value="サービス">その他サービス業</option>
+                                        <option value="その他">その他・不明</option>
+                                    </select>
+                                    <p th:if="${errors.hasError('industry')}" th:text="${errors.getMessage('industry')}"
+                                       class="error-message">
                                     </p>
                                 </td>
                             </tr>
